@@ -329,21 +329,6 @@ Never connect TXD or RXD directly to 5 V.
 
 ---
 
-## Final Result
-
-The project produced a compact USB-C programmer that combines:
-
-- reliable USB-to-UART conversion
-- ESP32-compatible programming signals
-- protected USB-C connectivity
-- target-board power access
-- visual communication activity
-- a documented configuration and test workflow
-
-The main outcome was not only a working board. The project demonstrated how schematic design, PCB layout, component protection, IC configuration and hardware validation must work together in a practical embedded product.
-
-
----
 
 ## 🙏 Thanks to PCBWay
 
