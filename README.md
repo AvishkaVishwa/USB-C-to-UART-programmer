@@ -329,37 +329,6 @@ Never connect TXD or RXD directly to 5 V.
 
 ---
 
-## Repository Structure
-
-```text
-.
-├── README.md
-├── hardware
-│   └── schematic
-│       └── CP2102N-USB-C-Programmer-Schematic.pdf
-├── configuration
-│   └── CP2102N_Programmer.configuration
-├── scripts
-│   ├── check-device.ps1
-│   ├── program-and-verify.ps1
-│   ├── reset-device.ps1
-│   └── loopback-test.ps1
-└── docs
-    └── images
-        ├── block-diagram.png
-        ├── schematic.png
-        ├── pcb-layout.png
-        ├── usb-differential-pair.png
-        ├── 3d-front.png
-        ├── 3d-back.png
-        ├── final-product-handheld.jpg
-        └── final-product-powered.jpg
-```
-
-The current documentation package includes the README, schematic PDF and images. KiCad source files, Gerbers, BOM and configuration/scripts can be added to the repository when they are ready for publication.
-
----
-
 ## Final Result
 
 The project produced a compact USB-C programmer that combines:
