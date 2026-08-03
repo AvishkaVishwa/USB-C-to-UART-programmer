@@ -366,7 +366,6 @@ From visual inspection and assembly of the prototype, the PCB quality was eviden
 
 A sincere thank you to **PCBWay** for sponsoring the PCB fabrication and helping turn this project from a KiCad design into a real, working prototype. ❤️
 
-> **Sponsorship disclosure:** PCB fabrication for this prototype was sponsored by PCBWay. The circuit design, layout decisions, testing process and technical opinions presented here are my own.
 
 ## Author
 
