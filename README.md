@@ -34,7 +34,7 @@ The main engineering work was not only placing the CP2102N on a PCB. It involved
 ## System Architecture
 
 <p align="center">
-  <img src="docs/images/block-diagram.png" alt="USB-C CP2102N programmer block diagram" width="900">
+  <img src="blockdiagrm.png" alt="USB-C CP2102N programmer block diagram" width="900">
 </p>
 
 The USB-C interface provides 5 V power and USB 2.0 data. D+, D-, CC1 and CC2 pass through the ESD-protection stage before reaching the rest of the circuit. The CP2102N converts USB data into UART and provides DTR/RTS control signals for compatible target boards.
@@ -61,13 +61,13 @@ The USB-C interface provides 5 V power and USB 2.0 data. D+, D-, CC1 and CC2 pas
 ## Schematic Design
 
 <p align="center">
-  <a href="hardware/schematic/CP2102N-USB-C-Programmer-Schematic.pdf">
-    <img src="docs/images/schematic.png" alt="Complete USB-C CP2102N programmer schematic" width="1000">
+  <a href="schematic.pdf">
+    <img src="schematic.png" alt="Complete USB-C CP2102N programmer schematic" width="1000">
   </a>
 </p>
 
 <p align="center">
-  <a href="hardware/schematic/CP2102N-USB-C-Programmer-Schematic.pdf"><strong>Open the full schematic PDF</strong></a>
+  <a href="schematic.pdf"><strong>Open the full schematic PDF</strong></a>
 </p>
 
 The schematic is intentionally simple, but several details are critical.
@@ -133,7 +133,7 @@ The core section includes:
 ## PCB Design
 
 <p align="center">
-  <img src="docs/images/pcb-layout.png" alt="Complete KiCad PCB layout" width="1000">
+  <img src="pcb design.png" alt="Complete KiCad PCB layout" width="1000">
 </p>
 
 The PCB review focused on the areas that directly affect operation and reliability:
@@ -149,7 +149,7 @@ The PCB review focused on the areas that directly affect operation and reliabili
 ### USB differential-pair routing
 
 <p align="center">
-  <img src="docs/images/usb-differential-pair.png" alt="USB-C differential pair and ESD routing" width="1000">
+  <img src="differential pair.png" alt="USB-C differential pair and ESD routing" width="1000">
 </p>
 
 The final routed lengths were:
@@ -178,8 +178,8 @@ Curved tracks are acceptable. The important factors are route quality, reference
 ## 3D PCB Preview
 
 <p align="center">
-  <img src="docs/images/3d-front.png" alt="Front 3D view of the CP2102N programmer" width="49%">
-  <img src="docs/images/3d-back.png" alt="Back 3D view of the CP2102N programmer" width="49%">
+  <img src="3d front.png" alt="Front 3D view of the CP2102N programmer" width="49%">
+  <img src="3d back.png" alt="Back 3D view of the CP2102N programmer" width="49%">
 </p>
 
 The 3D review was used to confirm:
@@ -196,8 +196,8 @@ The 3D review was used to confirm:
 ## Final Assembled Product
 
 <p align="center">
-  <img src="docs/images/final-product-handheld.jpg" alt="Assembled USB-C CP2102N programmer in hand" width="36%">
-  <img src="docs/images/final-product-powered.jpg" alt="Powered USB-C CP2102N programmer prototype" width="55%">
+  <img src="p1.jpg" alt="Assembled USB-C CP2102N programmer in hand" width="36%">
+  <img src="p2.jpg" alt="Powered USB-C CP2102N programmer prototype" width="55%">
 </p>
 
 These photos show the fabricated prototype after assembly and first power-up. They help bridge the gap between the schematic and PCB design files and the real final hardware.
@@ -312,8 +312,8 @@ Never connect TXD or RXD directly to 5 V.
 | CP210x COM-port detection | Verified |
 | D+/D- polarity and routing | Verified |
 | Command-line device detection | Verified |
-| UART loopback | Final verification pending |
-| TX/RX activity LEDs | GPIO configuration and final verification pending |
+| UART loopback | Verified |
+| TX/RX activity LEDs | Verified |
 
 ---
 
@@ -373,10 +373,34 @@ The project produced a compact USB-C programmer that combines:
 
 The main outcome was not only a working board. The project demonstrated how schematic design, PCB layout, component protection, IC configuration and hardware validation must work together in a practical embedded product.
 
+
 ---
+
+## 🙏 Thanks to PCBWay
+
+<p align="center">
+  <img src="p2.jpg" alt="Assembled CP2102N programmer manufactured by PCBWay" width="70%">
+</p>
+
+The complete design process — concept, schematic capture, component selection, PCB routing, assembly checks, configuration and debugging — was carried out as part of this project. Turning that design into a compact physical board, however, required accurate fabrication, especially around the USB-C connector, QFN package and fine-pitch protection components.
+
+This design also uses **curved copper routing** in the USB section. The curves were used to create smooth transitions while maintaining the required trace width, clearance and close D+/D− length matching. The manufactured boards reproduced these routes cleanly without visible edge irregularities or solder-mask registration problems.
+
+From visual inspection and assembly of the prototype, the PCB quality was evident in:
+
+- clean reproduction of the curved USB data routes
+- well-defined fine-pitch USB-C and QFN pads
+- consistent solder-mask alignment around small SMD components
+- accurate drilling and plating of the mounting holes
+- clear silkscreen and readable board markings
+- good board-edge and connector alignment
+
+A sincere thank you to **PCBWay** for sponsoring the PCB fabrication and helping turn this project from a KiCad design into a real, working prototype. ❤️
+
+> **Sponsorship disclosure:** PCB fabrication for this prototype was sponsored by PCBWay. The circuit design, layout decisions, testing process and technical opinions presented here are my own.
 
 ## Author
 
-**JJ**  
+**Avishka Vishwajith**  
 Instrumentation and Automation Engineering  
 University of Colombo, Faculty of Technology
